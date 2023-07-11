@@ -120,6 +120,55 @@ function resetState() {
 // })
 // };
 
+// Select answer function
+function selectAnswer(e) {
+  var selectedButton = e.target;
+  //console.dir(selectedButton);
+  var rightAnswer = shuffledQuestions[currentQuestionIndex].answer
+  var correct = selectedButton.textContent===rightAnswer
+  checkAnswerEl.classList.remove("hide")
+  // Check if the answer correct or wrong then show text
+  if (correct) {
+      checkAnswerEl.innerHTML = "Correct!";
+  } else {
+      checkAnswerEl.innerHTML = "Wrong";
+      if (timeLeft <= 10) {
+          timeLeft = 0;
+      } else {
+          // If the answer is wrong, deduct time by 10
+          timeLeft -= 10;
+      }
+  }
+
+  Array.from(answerButtonsEl.children).forEach(button => {
+      setStatusClass(button, button.dataset.correct)
+  })
+
+  if (shuffledQuestions.length > currentQuestionIndex + 1) {
+      nextButton.classList.remove("hide")
+      checkAnswerEl.classList.remove("hide")
+  } else {
+      startButton.classList.remove("hide")
+      saveScore();
+  }
+};
+
+// Check and show the correct answer by set the buttons colors
+function setStatusClass(element, correct) {
+  clearStatusClass(element)
+  if (correct) {
+      element.classList.add("correct");
+  } else {
+      element.classList.add("wrong");
+  }
+};
+
+
+// Remove all the classes
+function clearStatusClass(element) {
+  element.classList.remove("correct");
+  element.classList.remove("wrong");
+};
 
 
 
