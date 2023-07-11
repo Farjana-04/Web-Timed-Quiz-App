@@ -7,11 +7,11 @@
   }
   
   :root {
-    --primary-color: rgb(179, 35, 179);
-    --secondary-color: rgb(72, 0, 72);
+    --primary-color: indigo;
+    --secondary-color: violet;
     --tertiary-color: #aaaaaa;
     --white-color: #ffffff;
-    --correct-color: #6b8e23;
+    /* --correct-color: #6b8e23; */
   }
   
   body {
@@ -51,18 +51,8 @@
     color: var(--tertiary-color);
   }
   
-  /* Start Quiz */
-  /* .start-quiz {
-    text-align: center; */
-
-    
- .start-quiz {
+  .start-quiz {
      text-align: center; 
-    
-    /* display: block;
-  height: 480px;
-  position: relative;
-   display: none;  */
   }
   
   h1 {
@@ -111,10 +101,11 @@
   
   .hide {
     display: none;
+    
   }
   
   .btn.correct {
-    background-color: var(--correct-color);
+    background-color: var(--secondary-color);
   }
   
   .btn.wrong {
@@ -127,6 +118,7 @@
     justify-content: center;
     align-items: center;
     margin: 10px 0;
+    
   }
   
   /* Enter your initial */
@@ -149,7 +141,7 @@
   .score-div {
     flex: 1 35%;
     padding: 10px 0;
-    border: 1px solid var(--correct-color);
+    border: 1px solid var(--secondary-color);
   }
   
   /*** MEDIA QUERY FOR MOBILE PHONES AND SMALLER ***/
