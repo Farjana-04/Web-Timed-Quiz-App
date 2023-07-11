@@ -68,7 +68,7 @@
   h1 {
     margin-bottom: 10px;
     background: var(--white-color);
-    color: rgb(255, 184, 51) ;
+    color: var(--primary-color) ;
   }
    h4 {
     margin-bottom: 10px;
