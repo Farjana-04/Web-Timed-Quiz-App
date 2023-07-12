@@ -5,3 +5,4 @@ To help familiarize candidates with these tests and allow them to use the skills
 ![Quiz](https://github.com/Farjana-04/Web-Timed-Quiz-App/assets/92415181/c5f9ebd9-48a8-45ad-9157-ae6cfdc49559)
 
 ## Deployed Application Link
+https://farjana-04.github.io/Web-Timed-Quiz-App/
