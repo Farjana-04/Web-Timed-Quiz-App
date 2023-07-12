@@ -4,7 +4,6 @@ var nextButton = document.getElementById("next-btn");
 var questionContainerEl = document.getElementById("question-container");
 var startContainerEl = document.getElementById("start-container");
 var titleEl = document.getElementById("titleQuestions");
-// var questionEl = document.getElementById("question"); //titleEl "title"
 var answerButtonsEl = document.getElementById("answer-buttons");
 var checkAnswerEl = document.getElementById("check-answer");
 var viewHighScores = document.getElementById("highscores-link");
@@ -20,7 +19,7 @@ var timerEl = document.getElementById("timer");
 //randomly shuffled array, and genarate random index number
 var shuffledQuestions, currentQuestionIndex;
 
-// This is the question functions that contain questions and the answers. They are in multidimensional array with inner array elements
+// This is the question functions that contain questions and the answers. 
 var questions = [
     {
       title: 'Commonly used data types DO NOT include:',
@@ -112,14 +111,6 @@ function resetState() {
   }
 };
 
-// if (choice.correct) {
-//   button.dataset.correct = choice.correct
-// }
-// button.addEventListener("click", selectAnswer)
-// answerButtonsEl.appendChild(button)
-// })
-// };
-
 // Select answer function
 function selectAnswer(e) {
   var selectedButton = e.target;
@@ -139,7 +130,7 @@ function selectAnswer(e) {
           timeLeft -= 10;
       }
   }
-
+   //use array when button is clicked
   Array.from(answerButtonsEl.children).forEach(button => {
       setStatusClass(button, button.dataset.correct)
   })
@@ -205,7 +196,7 @@ var loadScores = function () {
   })
 };
 
-// Show high scores
+// Show high scores and type initials
 function showHighScores(initials) {
   document.getElementById("highscores").classList.remove("hide")
   document.getElementById("score-container").classList.add("hide");
