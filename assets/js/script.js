@@ -236,6 +236,26 @@ function showHighScores(initials) {
   localStorage.setItem("scores", JSON.stringify(scores));
 
 };
+// View high scores link
+viewHighScores.addEventListener("click", showHighScores);
+
+submitButton.addEventListener("click", function (event) {
+  event.preventDefault()
+  var initials = document.querySelector("#initials-field").value;
+  showHighScores(initials);
+});
+
+// Restart or reload the page
+restartButton.addEventListener("click", function () {
+  window.location.reload();
+});
+
+// Clear localStorage items
+clearScoreButton.addEventListener("click", function () {
+  localStorage.clear();
+  document.getElementById("highscore").innerHTML = "";
+});
+
 
 
 
