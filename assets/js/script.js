@@ -1,7 +1,7 @@
 // Start code for Quiz with created the variables
 var titleEl = document.getElementById("titleQuestions");
 var startElButton = document.getElementById("start-btn");
-var nextButton = document.getElementById("next-btn");
+ var nextButton = document.getElementById("next-btn");
 var questionEl = document.getElementById("question-container");
 var startContainerEl = document.getElementById("start-container");
 var answerButtonsEl = document.getElementById("answer-buttons");
@@ -56,11 +56,11 @@ var questions = [
   ];
 
   // Start button trigger the first question and next button to display
-startElButton.addEventListener("click", startQuize);
-nextButton.addEventListener("click", () => {
-    currentQuestionIndex++
+ startElButton.addEventListener("click", startQuize);
+ nextButton.addEventListener("click", () => {
+     currentQuestionIndex++
     nextQuestionSet()
-});
+ });
 // Start Quiz, hide the startElbutton after clicked
 function startQuize() {
   timerID = setInterval(timeSet, 1000);
@@ -114,7 +114,6 @@ function stateReset() {
 // Select answer function
 function selectAnswer(e) {
   var selectedButton = e.target;
-  //console.dir(selectedButton);
   var rightAnswer = shuffledQuestions[currentQuestionIndex].answer
   var correct = selectedButton.textContent===rightAnswer
   answerElChecking.classList.remove("hide")
@@ -126,8 +125,7 @@ function selectAnswer(e) {
       if (timeLeftOver <= 10) {
           timeLeftOver = 0;
       } else {
-          // If the answer is wrong, deduct time by 10
-          timeLeftOver -= 10;
+         timeLeftOver -= 10;  // If the answer is wrong, deduct time by 10
       }
   }
    //use array when button is clicked
@@ -164,7 +162,6 @@ function scoreSaving() {
   clearInterval(timerID);
   timerEl.textContent = "Time: " + timeLeftOver;
   setTimeout(function () {
-      //localStorage.setItem("scores", JSON.stringify(scores));
       questionEl.classList.add("hide");
       document.getElementById("score-container").classList.remove("hide");
       document.getElementById("your-score").textContent = "Your final score is " + timeLeftOver;
@@ -172,9 +169,7 @@ function scoreSaving() {
   }, 2000)
 };
 
-var loadScoreStorage = function () {
-  // Get score from local storage
-
+var loadScoreStorage = function () {  // Get score from local storage
   if (!scoreSaving) {
       return false;
   }
